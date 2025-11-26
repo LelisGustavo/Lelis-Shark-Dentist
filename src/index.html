@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Lélis Shark Dentist</title>
+
+    <!-- FavIcon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Description -->
+    <meta name="description" content="Lélis Shark Dentist é um site que oferece informações sobre o dentista, como o seu perfil, serviços, história, contato e outras informações importantes.">
+
+    <!-- Open Graph / WhatsApp / Facebook -->
+    <meta property="og:title" content="Lélis Shark Dentist">
+    <meta property="og:description" content="Lélis Shark Dentist é um site que oferece informações sobre o dentista, como o seu perfil, serviços, história, contato e outras informações importantes.">
+    <meta property="og:image" content="https://lelisgustavo.github.io/Lelis-Shark-Dentist/src/img/logo-nav-bar.svg">
+    <meta property="og:url" content="https://lelisgustavo.github.io/Lelis-Shark-Dentist/src/index.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lélis Shark Dentist">
+    <meta name="twitter:description" content="Lélis Shark Dentist é um site que oferece informações sobre o dentista, como o seu perfil, serviços, história, contato e outras informações importantes.">
+    <meta name="twitter:image" content="https://lelisgustavo.github.io/Lelis-Shark-Dentist/src/img/logo-nav-bar.svg">
+    <meta name="twitter:url" content="https://lelisgustavo.github.io/Lelis-Shark-Dentist/src/index.html">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="bg-color-white-dentist">
+
+    <!-- Navbar -->
+    <header class="absolute inset-x-0 top-0 z-50 bg-color-white-dentist">
+
+        <nav aria-label="Menu de Navegação" class="flex items-center justify-between p-6 lg:px-8 max-w-7xl mx-auto">
+
+            <!-- Logo -->
+            <div class="flex lg:flex-1">
+
+                <a href="#home" class="-m-1.5 p-1.5 flex items-center gap-4">
+
+                    <span class="sr-only">Lélis Shark Dentist</span>
+                    <img src="img/logo-nav-bar.svg" alt="Logo" />
+
+                    <div class="text-center space-y-2 color-black-dentist">
+
+                        <p class="text-lg md:text-2xl">
+                            Odontologia Integral
+                        </p>
+
+                        <p>
+                            Saúde & Estética Dentária
+                        </p>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <!-- Botão menu hamburhuer (abri) -->
+            <div class="flex lg:hidden">
+
+                <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200">
+
+                    <span class="sr-only">Abrir menu</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 color-light-blue-dentist">
+                        <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                </button>
+
+            </div>
+
+            <!-- Links -->
+            <div class="hidden lg:flex lg:gap-x-12 font-main color-black-dentist text-sm md:ms-20">
+
+                <a href="#home">Inicio</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#quem-somos">Quem Somos</a>
+                <a href="#contato">Contato</a>
+
+            </div>
+
+            <!-- Botão login -->
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+
+                <a href="#" class="text-sm color-dark-blue-dentist rounded-xl py-2 px-4 border-color-dark-blue-dentist">
+                    Entrar
+                </a>
+
+            </div>
+
+        </nav>
+
+        <!-- Menu mobile -->
+        <el-dialog>
+
+            <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+
+                <div tabindex="0" class="fixed inset-0 focus:outline-none">
+
+                    <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white/70 backdrop-blur-md p-6 lg:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+
+                        <div class="flex items-center justify-between">
+
+                            <!-- Logo -->
+                            <a href="#" class="flex items-center gap-4 -m-1.5 p-1.5">
+
+                                <span class="sr-only">Lélis Shark Dentist</span>
+                                <img src="img/logo-nav-bar.svg" alt="Logo" />
+
+                                <div class="text-center space-y-2 color-black-dentist">
+
+                                    <p class="text-lg md:text-2xl">
+                                        Odontologia Integral
+                                    </p>
+
+                                    <p>
+                                        Saúde & Estética Dentária
+                                    </p>
+
+                                </div>
+
+                            </a>
+
+                            <!-- Botão menu hamburhuer (fechar) -->
+                            <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-200">
+
+                                <span class="sr-only">Fechar menu</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 color-light-blue-dentist">
+                                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+
+                            </button>
+
+                        </div>
+
+                        <div class="mt-16 flow-root">
+
+                            <div class="-my-6 divide-y divide-white/10 font-main text-sm grid grid-cols-2">
+
+                                <!-- Botão login -->
+                                <div class="py-6">
+
+                                    <div class="grid grid-cols-2 gap-4 mb-10 space-y-4">
+
+                                        <a href="#"><img src="img/icon-01.svg" alt="LinkedIn"></a>
+                                        <a href="#"><img src="img/icon-02.svg" alt="Instagram"></a>
+                                        <a href="#"><img src="img/icon-03.svg" alt="Gmail"></a>
+                                        <a href="#"><img src="img/icon-04.svg" alt="Facebook"></a>
+                                        
+                                    </div>
+
+                                    <a href="#" class="-mx-3 rounded-lg text-sm color-dark-blue-dentist rounded-xl py-2 px-4 border-color-dark-blue-dentist">Entar</a>
+
+                                </div>
+
+                                <!-- Links -->
+                                <div class="space-y-2 py-6 text-end color-light-blue-dentist">
+
+                                    <a href="#home" class="-mx-3 block rounded-lg px-3 py-2">Inicio</a>
+                                    <a href="#servicos" class="-mx-3 block rounded-lg px-3 py-2">Serviços</a>
+                                    <a href="#quem-somos" class="-mx-3 block rounded-lg px-3 py-2">Quem Somos</a>
+                                    <a href="#contato" class="-mx-3 block rounded-lg px-3 py-2">Contato</a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </el-dialog-panel>
+
+                </div>
+
+            </dialog>
+
+        </el-dialog>
+
+    </header>
+    
+    <!-- Banner -->
+    <section id="home" class="overflow-hidden bg-color-white-dentist pt-24 sm:pt-32 pb-4">
+
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+            <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+
+                <!-- Textos e Links -->
+                <div class="lg:pt-4 lg:pr-8 order-1 lg:order-0">
+
+                    <div class="lg:max-w-lg font-main">
+
+                        <!-- Textos -->
+                        <h2 class="text-base font-semibold color-medium-blue-dentist mb-8 lg:mb-16">Na cidade de Nova Odessa</h2>
+
+                        <p class="text-2xl md:text-4xl font-semibold text-pretty color-dark-blue-dentist sm:text-6xl">
+                            Uma excelente experiência
+                        </p>
+
+                        <p class="text-2xl md:text-4xl font-semibold text-pretty color-medium-blue-dentist sm:text-6xl mt-4">Odontológica</p>
+
+                        <p class="my-8 lg:my-16 text-lg md:text-xl color-gray-dentist">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit molestie, rhoncus luctus arcu ut eros augue. Eu commodo laoreet parturient quam purus magna pretium luctus.
+                        </p>
+
+                        <!-- Links -->
+                        <div class="flex justify-between font-main">
+
+                            <a 
+                                href="#"
+                                class="
+                                    color-white-dentist
+                                    bg-color-light-blue-dentist
+                                    py-2 px-4
+                                    rounded-2xl
+                                    btn-shadow
+                                "
+                            >
+                                Entrar
+                            </a>
+
+                            <a href="#servicos" class="color-gray-dentist underline underline-offset-8 ">Nossos Serviços</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Imagem -->
+                <div class="bg-linear-to-t from-sky-500 to-sky-50 rounded-full flex items-center justify-center mt-10 md:mt-0">
+
+                    <img width="595" height="893" src="img/image-01.png" alt="Doutora e Paciente" class="w-[60%]" />
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contato 01 -->
+    <section class="py-4 md:py-8">
+
+        <div class="mt-4 grid grid-cols-1 overflow-hidden bg-[#D4E4F4] md:grid-cols-3">
+
+            <!-- Localização -->
+            <div class="flex items-center gap-8 place-content-center p-6 md:p-12">
+
+                <!-- Imagem logo 01 -->
+                <img src="img/icon-05.svg" alt="Ícone de localização">
+
+                <!-- Texto -->
+                <div class="flex flex-col color-dark-blue-dentist">
+
+                    <span class="font-main text-lg font-semibold mb-2 md:mb-4">Localização</span>
+
+                    <small>Av. da Música, 182</small>
+                    <small>Nova Odessa, SP - Brasil</small>
+
+                </div>
+
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-center gap-8 place-content-center p-6 md:p-12">
+
+                <!-- Imagem logo 02 -->
+                <img src="img/icon-06.svg" alt="Ícone de email">
+
+                <!-- Texto -->
+                <div class="flex flex-col color-dark-blue-dentist">
+
+                    <span class="font-main text-lg font-semibold mb-2 md:mb-4">Email</span>
+
+                    <small>info@dentist.com.br</small>
+                    <small>info@dentist.com.br</small>
+
+                </div>
+
+            </div>
+
+            <!-- Telefones -->
+            <div class="flex items-center gap-8 place-content-center p-6 md:p-12">
+
+                <!-- Imagem logo 03 -->
+                <img src="img/icon-07.svg" alt="Ícone de telefone">
+
+                <!-- Texto -->
+                <div class="flex flex-col color-dark-blue-dentist">
+
+                    <span class="font-main text-lg font-semibold mb-2 md:mb-4">Telefones</span>
+
+                    <small>+55 (19) 99999-9999</small>
+                    <small>+55 (19) 99999-9999</small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Nossos serviços -->
+    <section id="servicos" class="mx-auto max-w-7xl bg-tooth-dentist">
+
+        <!-- Textos -->
+        <div class="lg:pt-4 lg:pr-8 px-6 lg:px-8">
+
+            <div class="lg:max-w-lg font-main">
+
+                <!-- Textos -->
+                <h2 class="text-base font-semibold color-medium-blue-dentist mb-4">Especialidades</h2>
+
+                <p class="text-2xl md:text-4xl font-semibold text-pretty color-dark-blue-dentist sm:text-6xl">
+                    Nossos Serviços
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Cards 01 -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-12 px-6 lg:px-8">
+
+            <!-- Card 01 -->
+            <div class="block rounded-md p-4 card-shadow sm:p-6">
+
+                <div class="sm:gap-4 lg:gap-6">
+
+                    <div class="sm:order-last sm:shrink-0">
+
+                        <img alt="Ícone" src="img/icon-08.svg" class="size-16 rounded-full object-cover sm:size-[72px]">
+
+                    </div>
+
+                    <div class="mt-4 font-main">
+
+                        <h3 class="text-3xl font-semibold text-pretty color-medium-blue-dentist">
+                            Implantes
+                        </h3>
+
+                        <p class="mt-4 text-sm text-pretty color-gray-dentist mb-4">
+                            Os implantes dentários são uma substituição artificial para os dentes e suas raízes. Geralmente em formato de parafuso, os implantes têm aparência e sensação semelhantes aos dentes naturais, proporcionando assim maior conforto, segurança e confiança em comparação com outros métodos.
+                        </p>
+
+                        <a href="#" class="color-light-blue-dentist">Ver mais +</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 02 -->
+            <div class="block rounded-md p-4 card-shadow sm:p-6">
+
+                <div class="sm:gap-4 lg:gap-6">
+
+                    <div class="sm:order-last sm:shrink-0">
+
+                        <img alt="Ícone" src="img/icon-09.svg" class="size-16 rounded-full object-cover sm:size-[72px]">
+
+                    </div>
+
+                    <div class="mt-4 font-main">
+
+                        <h3 class="text-3xl font-semibold text-pretty color-medium-blue-dentist">
+                            Ortodontia
+                        </h3>
+
+                        <p class="mt-4 text-sm text-pretty color-gray-dentist mb-4">
+                            A ortodontia com aparelhos de cerâmica oferece uma estética mais refinada em comparação com os aparelhos metálicos. Os resultados em termos de alinhamento dos dentes são semelhantes aos da opção metálica. É uma escolha ideal para quem busca o equilíbrio entre estética e orçamento.
+                        </p>
+
+                        <a href="#" class="color-light-blue-dentist">Ver mais +</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 03 -->
+            <div class="block rounded-md p-4 card-shadow sm:p-6">
+
+                <div class="sm:gap-4 lg:gap-6">
+
+                    <div class="sm:order-last sm:shrink-0">
+
+                        <img alt="Ícone" src="img/icon-10.svg" class="size-16 rounded-full object-cover sm:size-[72px]">
+
+                    </div>
+
+                    <div class="mt-4 font-main">
+
+                        <h3 class="text-3xl font-semibold text-pretty color-medium-blue-dentist">
+                            Implantes
+                        </h3>
+
+                        <p class="mt-4 text-sm text-pretty color-gray-dentist mb-4">
+                            Os implantes dentários são uma substituição artificial para os dentes e suas raízes. Geralmente em formato de parafuso, os implantes têm aparência e sensação semelhantes aos dentes naturais, proporcionando assim maior conforto, segurança e confiança em comparação com outros métodos.
+                        </p>
+
+                        <a href="#" class="color-light-blue-dentist">Ver mais +</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Cards 02 -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-12 px-6 lg:px-8">
+
+            <!-- Card 04 -->
+            <div class="block rounded-md p-4 card-shadow sm:p-6">
+
+                <div class="sm:gap-4 lg:gap-6">
+
+                    <div class="sm:order-last sm:shrink-0">
+
+                        <img alt="Ícone" src="img/icon-11.svg" class="size-16 rounded-full object-cover sm:size-[72px]">
+
+                    </div>
+
+                    <div class="mt-4 font-main">
+
+                        <h3 class="text-3xl font-semibold text-pretty color-medium-blue-dentist">
+                            Implantes
+                        </h3>
+
+                        <p class="mt-4 text-sm text-pretty color-gray-dentist mb-4">
+                            Os implantes dentários são uma substituição artificial para os dentes e suas raízes. Geralmente em formato de parafuso, os implantes têm aparência e sensação semelhantes aos dentes naturais, proporcionando assim maior conforto, segurança e confiança em comparação com outros métodos.
+                        </p>
+
+                        <a href="#" class="color-light-blue-dentist">Ver mais +</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 05 -->
+            <div class="block rounded-md p-4 card-shadow sm:p-6">
+
+                <div class="sm:gap-4 lg:gap-6">
+
+                    <div class="sm:order-last sm:shrink-0">
+
+                        <img alt="Ícone" src="img/icon-12.svg" class="size-16 rounded-full object-cover sm:size-[72px]">
+
+                    </div>
+
+                    <div class="mt-4 font-main">
+
+                        <h3 class="text-3xl font-semibold text-pretty color-medium-blue-dentist">
+                            Ortodontia
+                        </h3>
+
+                        <p class="mt-4 text-sm text-pretty color-gray-dentist mb-4">
+                            A ortodontia com aparelhos de cerâmica oferece uma estética mais refinada em comparação com os aparelhos metálicos. Os resultados em termos de alinhamento dos dentes são semelhantes aos da opção metálica. É uma escolha ideal para quem busca o equilíbrio entre estética e orçamento.
+                        </p>
+
+                        <a href="#" class="color-light-blue-dentist">Ver mais +</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 06 -->
+            <div class="block rounded-md p-4 card-shadow sm:p-6">
+
+                <div class="sm:gap-4 lg:gap-6">
+
+                    <div class="sm:order-last sm:shrink-0">
+
+                        <img alt="Ícone" src="img/icon-13.svg" class="size-16 rounded-full object-cover sm:size-[72px]">
+
+                    </div>
+
+                    <div class="mt-4 font-main">
+
+                        <h3 class="text-3xl font-semibold text-pretty color-medium-blue-dentist">
+                            Implantes
+                        </h3>
+
+                        <p class="mt-4 text-sm text-pretty color-gray-dentist mb-4">
+                            Os implantes dentários são uma substituição artificial para os dentes e suas raízes. Geralmente em formato de parafuso, os implantes têm aparência e sensação semelhantes aos dentes naturais, proporcionando assim maior conforto, segurança e confiança em comparação com outros métodos.
+                        </p>
+
+                        <a href="#" class="color-light-blue-dentist">Ver mais +</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Feedback pacientes -->
+    <section class="mx-auto max-w-7xl mt-8 md:mt-16">
+
+        <!-- Textos -->
+        <div class="flex justify-center text-center lg:pt-4 lg:pr-8 px-6 lg:px-8">
+
+            <div class="lg:max-w-lg font-main">
+
+                <!-- Textos -->
+                <h2 class="text-base font-semibold color-medium-blue-dentist mb-4">Depoimentos</h2>
+
+                <p class="text-2xl md:text-4xl font-semibold text-pretty color-dark-blue-dentist sm:text-6xl">
+                    O que nossos pacientes pensam
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Cards 01 -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-12 px-6 lg:px-8">
+
+            <!-- Card 01 -->
+            <div class="block rounded-md p-4 card-shadow sm:p-6">
+
+                <div class="sm:gap-4 lg:gap-6">
+
+                    <div class="mt-4 font-main">
+
+                        <h3 class="text-2xl font-semibold text-pretty color-black-dentist">
+                            Thomas DeLonge
+                        </h3>
+
+                        <div class="flex gap-1 my-4">
+
+                            <img src="img/icon-14.svg" alt="Ícone de estrela">
+                            <img src="img/icon-14.svg" alt="Ícone de estrela">
+                            <img src="img/icon-14.svg" alt="Ícone de estrela">
+                            <img src="img/icon-14.svg" alt="Ícone de estrela">
+
+                        </div>
+
+                        <p class="mt-4 text-sm text-pretty color-gray-dentist mb-4">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit conubia, massa facilisi lectus ullamcorper ridiculus potenti iaculis nibh, interdum faucibus ad diam vivamus vehicula fames.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 02 -->
+            <div class="block rounded-md p-4 card-shadow sm:p-6">
+
+                <div class="sm:gap-4 lg:gap-6">
+
+                    <div class="mt-4 font-main">
+
+                        <h3 class="text-2xl font-semibold text-pretty color-black-dentist">
+                            Mark Hoppus
+                        </h3>
+
+                        <div class="flex gap-1 my-4">
+
+                            <img src="img/icon-14.svg" alt="Ícone de estrela">
+                            <img src="img/icon-14.svg" alt="Ícone de estrela">
+                            <img src="img/icon-14.svg" alt="Ícone de estrela">
+
+                        </div>
+
+                        <p class="mt-4 text-sm text-pretty color-gray-dentist mb-4">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit conubia, massa facilisi lectus ullamcorper ridiculus potenti iaculis nibh, interdum faucibus ad diam vivamus vehicula fames.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 03 -->
+            <div class="block rounded-md p-4 card-shadow sm:p-6">
+
+                <div class="sm:gap-4 lg:gap-6">
+
+                    <div class="mt-4 font-main">
+
+                        <h3 class="text-2xl font-semibold text-pretty color-black-dentist">
+                            Travis Barker
+                        </h3>
+
+                        <div class="flex gap-1 my-4">
+
+                            <img src="img/icon-14.svg" alt="Ícone de estrela">
+                            <img src="img/icon-14.svg" alt="Ícone de estrela">
+                            <img src="img/icon-14.svg" alt="Ícone de estrela">
+                            <img src="img/icon-14.svg" alt="Ícone de estrela">
+                            <img src="img/icon-14.svg" alt="Ícone de estrela">
+
+                        </div>
+
+                        <p class="mt-4 text-sm text-pretty color-gray-dentist mb-4">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit conubia, massa facilisi lectus ullamcorper ridiculus potenti iaculis nibh, interdum faucibus ad diam vivamus vehicula fames.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Botão ver mais depoimentos -->
+        <div class="flex justify-center text-center pt-8 lg:pr-8 px-6 lg:px-8">
+
+            <button class="text-lg color-medium-blue-dentist rounded-xl py-2 px-4 border-color-medium-blue-dentist">Ver mais depoimentos</button>
+
+        </div>
+
+    </section>
+
+    <!-- Sobre mim -->
+    <section id="quem-somos" class="overflow-hidden bg-color-white-dentist pt-4 sm:pt-16 pb-4">
+
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+            <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+
+                <!-- Imagem -->
+                <div class="flex items-center justify-center mt-10 md:mt-0">
+
+                    <img width="1024" height="1536" src="img/image-03.png" alt="Doutor Lélis Shark" class="w-[60%] rounded-lg" />
+
+                </div>
+
+                <!-- Textos  -->
+                <div class="lg:pt-4 lg:pr-8 order-1 lg:order-0">
+
+                    <div class="lg:max-w-lg font-main">
+
+                        <!-- Textos -->
+                        <h2 class="text-base font-semibold color-medium-blue-dentist mb-4">Sobre mim</h2>
+
+                        <p class="text-2xl md:text-4xl font-semibold text-pretty color-dark-blue-dentist sm:text-6xl">
+                            Dr. Lélis Shark
+                        </p>
+
+                        <ul class="list-disc mt-4 md:mt-8 ms-4 lg:ms-0 color-gray-dentist space-y-2">
+
+                            <li>Médico, formado pela Universidade Nacional de Córdoba, Argentina.</li>
+
+                            <li>Dentista, formado pela Universidade de Paris, França.</li>
+
+                            <li>Professor da Universidade Nacional de Córdoba desde 1975.</li>
+
+                            <li>Membro das seguintes academias:
+
+                                <ul class="list-disc ms-8 mt-1 space-y-2">
+
+                                    <li>A.L.A.O.: Academia Latino-Americana de Osseointegração.</li>
+
+                                    <li>A.I.I.O.: Academia Internacional de Implantes e Osseointegração. Membro Fundador.</li>
+
+                                    <li>A.V.O.I.O.: Academia Venezuelana de Osseointegração e Implantologia Oral. Membro Honorário.</li>
+
+                                    <li>Academia Pierre Fauchard: Academia Honorária de Odontologia dos EUA.</li>
+
+                                    <li>A.I.I.P.: Academia Internacional de Implantologia e Periodontia – Barcelona. Presidente Internacional.</li>
+
+                                </ul>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Nossa clinica -->
+    <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 bg-bubbles-dentist">
+
+        <!-- Textos -->
+        <div class="lg:pt-4 lg:pr-8">
+
+            <div class="lg:max-w-lg font-main">
+
+                <!-- Textos -->
+                <h2 class="text-base font-semibold color-medium-blue-dentist mb-4">As instalações</h2>
+
+                <p class="text-2xl md:text-4xl font-semibold text-pretty color-dark-blue-dentist sm:text-6xl">
+                    Nossa Clínica
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Imagens -->
+        <div class="mt-8 grid gap-4 grid-cols-12">
+
+            <div class="col-span-12 md:col-span-8">
+
+                <img width="1156" height="788" src="img/image-04.png" alt="Imagem clínica 01" class="h-[350px] w-full object-cover transition sm:h-[450px]">
+
+            </div>
+
+            <div class="col-span-12 md:col-span-4">
+
+                <img width="462" height="788" src="img/image-05.png" alt="Imagem clínica 02" class="h-[350px] w-full object-cover transition sm:h-[450px]">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Perguntas frequentes -->
+    <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 bg-linear-to-t from-sky-50 to-white">
+
+        <!-- Textos -->
+        <div class="flex justify-center text-center lg:pt-4 lg:pr-8 px-6 lg:px-8">
+
+            <div class="lg:max-w-lg font-main">
+
+                <!-- Textos -->
+                <h2 class="text-base font-semibold color-medium-blue-dentist mb-4">Dúvidas</h2>
+
+                <p class="text-2xl md:text-4xl font-semibold text-pretty color-dark-blue-dentist sm:text-6xl">
+                    Perguntas frequentes
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Accordions -->
+        <div class="my-8 md:my-16 flex flex-col gap-8 divide-y divide-gray-200">
+
+            <!-- Accordion 01 -->
+            <details class="group py-4 [&amp;_summary::-webkit-details-marker]:hidden card-shadow rounded-lg">
+
+                <summary class="flex items-center justify-between gap-1.5 font-main px-10">
+
+                    <h2 class="text-lg md:text-2xl color-dark-blue-dentist font-medium">Quais planos de saúde eles aceitam?</h2>
+
+                    <svg class="size-5 color-dark-blue-dentist shrink-0 transition-transform duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+
+                </summary>
+
+                <p class="pt-4 color-gray-dentist px-10">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias
+                    culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo
+                    officiis explicabo consequuntur distinctio corporis earum similique!
+                </p>
+
+            </details>
+
+            <!-- Accordion 02 -->
+            <details class="group py-4 [&amp;_summary::-webkit-details-marker]:hidden card-shadow rounded-lg">
+
+                <summary class="flex items-center justify-between gap-1.5 font-main px-10">
+
+                    <h2 class="text-lg md:text-2xl color-dark-blue-dentist font-medium">Quais planos de saúde eles aceitam?</h2>
+
+                    <svg class="size-5 color-dark-blue-dentist shrink-0 transition-transform duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+
+                </summary>
+
+                <p class="pt-4 color-gray-dentist px-10">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias
+                    culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo
+                    officiis explicabo consequuntur distinctio corporis earum similique!
+                </p>
+
+            </details>
+
+            <!-- Accordion 03 -->
+            <details class="group py-4 [&amp;_summary::-webkit-details-marker]:hidden card-shadow rounded-lg">
+
+                <summary class="flex items-center justify-between gap-1.5 font-main px-10">
+
+                    <h2 class="text-lg md:text-2xl color-dark-blue-dentist font-medium">Quais planos de saúde eles aceitam?</h2>
+
+                    <svg class="size-5 color-dark-blue-dentist shrink-0 transition-transform duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+
+                </summary>
+
+                <p class="pt-4 color-gray-dentist px-10">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias
+                    culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo
+                    officiis explicabo consequuntur distinctio corporis earum similique!
+                </p>
+
+            </details>
+
+            <!-- Accordion 04 -->
+            <details class="group py-4 [&amp;_summary::-webkit-details-marker]:hidden card-shadow rounded-lg">
+
+                <summary class="flex items-center justify-between gap-1.5 font-main px-10">
+
+                    <h2 class="text-lg md:text-2xl color-dark-blue-dentist font-medium">Quais planos de saúde eles aceitam?</h2>
+
+                    <svg class="size-5 color-dark-blue-dentist shrink-0 transition-transform duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+
+                </summary>
+
+                <p class="pt-4 color-gray-dentist px-10">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias
+                    culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo
+                    officiis explicabo consequuntur distinctio corporis earum similique!
+                </p>
+
+            </details>
+
+            <!-- Accordion 05 -->
+            <details class="group py-4 [&amp;_summary::-webkit-details-marker]:hidden card-shadow rounded-lg">
+
+                <summary class="flex items-center justify-between gap-1.5 font-main px-10">
+
+                    <h2 class="text-lg md:text-2xl color-dark-blue-dentist font-medium">Quais planos de saúde eles aceitam?</h2>
+
+                    <svg class="size-5 color-dark-blue-dentist shrink-0 transition-transform duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+
+                </summary>
+
+                <p class="pt-4 color-gray-dentist px-10">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias
+                    culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo
+                    officiis explicabo consequuntur distinctio corporis earum similique!
+                </p>
+
+            </details>
+
+        </div>
+
+    </section>
+
+    <!-- Contato 02 -->
+    <section id="contato" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 bg-linear-to-t from-sky-300 to-sky-50">
+
+        <!-- Textos -->
+        <div class="flex justify-end text-end lg:pt-4 lg:pr-8 px-6 lg:px-8">
+
+            <div class="lg:max-w-lg font-main">
+
+                <!-- Textos -->
+                <h2 class="text-base font-semibold color-medium-blue-dentist mb-4">Formas de</h2>
+
+                <p class="text-2xl md:text-4xl font-semibold text-pretty color-dark-blue-dentist sm:text-6xl">
+                    Contato
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Informações de contato e Formulário -->
+        <div class="relative isolate overflow-hidden py-8">
+
+            <div class="grid grid-cols-1 lg:grid-cols-12">
+
+                <!-- Informações de contato -->
+                <div class="col-span-5">
+                    
+                    <ul class="space-y-8">
+
+                        <!-- Email -->
+                        <li class="flex gap-4 items-center">
+
+                            <img src="img/icon-15.svg" alt="Ícon de email">
+
+                            <div class="color-gray-dentist">
+
+                                <p class="text-2xl">Email</p>
+                                <span>info@dentist.com.br</span>
+
+                            </div>
+
+                        </li>
+
+                        <!-- WhatsApp -->
+                        <li class="flex gap-4 items-center">
+
+                            <img src="img/icon-16.svg" alt="Ícon de whatsapp">
+
+                            <div class="color-gray-dentist">
+
+                                <p class="text-2xl">WhatsApp</p>
+                                <span>+55 (19) 99999-9999</span>
+
+                            </div>
+
+                        </li>
+
+                        <!-- Ramal -->
+                        <li class="flex gap-4 items-center">
+
+                            <img src="img/icon-17.svg" alt="Ícon de ramal">
+
+                            <div class="color-gray-dentist">
+
+                                <p class="text-2xl">Ramal</p>
+                                <span>99/99999-9999</span>
+
+                            </div>
+
+                        </li>
+
+                        <!-- Localização -->
+                        <li class="flex gap-4 items-center">
+
+                            <img src="img/icon-18.svg" alt="Ícon de localização">
+
+                            <div class="color-gray-dentist">
+
+                                <p class="text-2xl">Localização</p>
+                                <span>Av. da Música, 182</span>
+
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                    <!-- Redes Sociais -->
+                    <div class="max-w-sm mx-auto flex justify-between mt-8 md:mt-16">
+
+                        <a href="#"><img src="img/icon-19.svg" alt="Ícone facebook"></a>
+                        <a href="#"><img src="img/icon-20.svg" alt="Ícone linkedin"></a>
+                        <a href="#"><img src="img/icon-21.svg" alt="Ícone instagram"></a>
+
+                    </div>
+
+                </div>
+
+                <!-- Formulário -->
+                <form class="col-span-7 p-5 bg-linear-to-t from-sky-700 to-sky-300 rounded-lg order-first sm:order-last mb-8 space-y-8">
+
+                    <h2 class="text-4xl font-main font-semibold tracking-tight color-white-dentist">
+                        Entre em contato para agendar uma consulta.
+                    </h2>
+
+                    <!-- Nome -->
+                    <div class="mt-6 flex max-w-md gap-x-4">
+
+                        <input 
+                            type="text" 
+                            id="nome" 
+                            name="nome" 
+                            required 
+                            placeholder="Nome" 
+                            class="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-white focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" 
+                        />
+
+                    </div>
+
+                    <!-- E-mail -->
+                    <div class="mt-6 flex max-w-md gap-x-4">
+
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            placeholder="E-mail" 
+                            class="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-white focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" 
+                        />
+
+                    </div>
+
+                    <!-- Telefone -->
+                    <div class="mt-6 flex max-w-md gap-x-4">
+
+                        <input 
+                            type="tel" 
+                            id="telefone" 
+                            name="telefone" 
+                            required 
+                            placeholder="Telefone" 
+                            class="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-white focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" 
+                        />
+
+                    </div>
+
+                    <!-- Botão -->
+                    <button
+                        class="
+                            color-white-dentist
+                            bg-color-light-blue-dentist
+                            py-2 px-4
+                            rounded-2xl
+                            btn-shadow
+                            mt-4
+                        "
+                    >
+                        Enviar
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-color-white-dentist">
+
+        <div class="mx-auto max-w-7xl">
+
+            <img width="1727" height="575" src="img/image-07.png" alt="Local Google Maps">
+
+            <p class="bg-color-black-dentist color-white-dentist text-center text-base font-main py-2">
+                Desenvolvido por <a href="https://github.com/lelisgustavo" target="_blank" class="color-light-blue-dentist">Gustavo Lélis Rocha</a>
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
